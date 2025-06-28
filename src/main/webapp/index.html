@@ -1,0 +1,37 @@
+<head>
+    <script src="./javascript/html5-qrcode.min.js"></script>
+    <script src="./javascript/javascript.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body style="display: flex; justify-content: center;">
+<div class="row">
+    <div class="col">
+        <div style="width:500px;" id="reader"></div>
+    </div>
+    <div id="overview" class="col" style="padding:30px;">
+        <h4>Scan an item to get started</h4>
+    </div>
+</div>
+<br>
+<div class = "row">
+    <div class="col">
+        <div id="title"></div>
+        <div id="ingredients"></div>
+        <br>
+        <div id="instructions"></div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    function onScanSuccess(qrCodeMessage) {
+        checkItem(qrCodeMessage);
+    }
+
+    function onScanError(errorMessage) {
+    }
+
+    var html5QrcodeScanner = new Html5QrcodeScanner("reader", {fps: 10, qrbox: 250});
+    html5QrcodeScanner.render(onScanSuccess, onScanError);
+</script>

@@ -1,0 +1,13 @@
+.row{
+    display:flex;
+    width: 100%;
+}
+
+.items td, #items th {
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+.items tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
